@@ -88,6 +88,7 @@ type Props = {
 ## License
 
 Copyright (c) 2016 Yonah Forst
+
 Modifications: Copyright (c) 2020 Andre 'Staltz' Medeiros
 
 MIT
