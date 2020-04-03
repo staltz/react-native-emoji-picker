@@ -1,11 +1,11 @@
 {
-  "name": "react-native-emoji-picker",
+  "name": "react-native-emoji-picker-staltz",
   "version": "0.2.2",
   "description": "Simple emoji picker for react-native",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yonahforst/react-native-emoji-picker.git"
+    "url": "git@github.com:staltz/react-native-emoji-picker-staltz.git"
   },
   "keywords": [
     "react-native",
@@ -15,20 +15,30 @@
     "emoji-picker"
   ],
   "peerDependencies": {
-    "react": "^15.2.0",
-    "react-native": "^0.30.0",
-    "prop-types": "^15.6.0"
+    "react": ">=15.2.0",
+    "react-native": ">=0.30.0"
+  },
+  "devDependencies": {
+    "@types/react": "16.9.x",
+    "@types/react-native": "0.60.26",
+    "react": "~16.9.0",
+    "react-native": "~0.61.5",
+    "typescript": "~3.8.3"
   },
   "dependencies": {
-    "emoji-datasource": "^2.4.4",
-    "lodash": "^4.11.1",
-    "prop-types": "^15.6.0",
-    "string.fromcodepoint": "^0.2.1"
+    "emoji-datasource": "~5.0.1",
+    "lodash.groupby": "~4.6.0",
+    "lodash.orderby": "~4.6.0",
+    "lodash.mapvalues": "~4.6.0",
+    "string.fromcodepoint": "~0.2.1"
+  },
+  "scripts": {
+    "compile": "tsc"
   },
   "author": "Yonah Forst <yonaforst@hotmail.com> (https://github.com/yonahforst)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yonahforst/react-native-emoji-picker/issues"
+    "url": "https://github.com/staltz/react-native-emoji-picker/issues"
   },
-  "homepage": "https://github.com/ryonahforst/react-native-emoji-picker"
+  "homepage": "https://github.com/staltz/react-native-emoji-picker"
 }
