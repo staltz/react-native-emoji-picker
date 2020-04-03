@@ -1,1 +1,8 @@
-Example
+node_modules
+.DS_Store
+.vscode
+pnpm-lock.yaml
+**/.DS_Store
+index.d.ts
+index.js
+index.js.map
