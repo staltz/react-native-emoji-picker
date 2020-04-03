@@ -1,16 +1,38 @@
-## Emoji picker for react-native
-Powered by the awesome `emoji-datasource`
+## Emoji picker for React Native
 
-![AnimatedExample](animated-example.gif)
+**Forked from [yonahforst/react-native-emoji-picker](https://github.com/yonahforst/react-native-emoji-picker)**
 
-### Installation
-```bash
-npm install react-native-emoji-picker
+The changes made from react-native-emoji-picker to **react-native-emoji-picker-staltz** are:
+
+- Supports `rows: number` prop to specify number of rows used in the layout
+- Supports **only** the modal-looking overlay
+- Supports `onPressOutside` prop
+- Supports customizing the names of the categories, with the prop `localizedCategories`
+- Supports several styling props:
+  - `modalStyle`
+  - `backgroundStyle`
+  - `containerStyle`
+  - `scrollStyle`
+  - `headerStyle`
+  - `clearButtonStyle`
+- Implemented with FlatList, not a ScrollView with `setTimeout` hacks (this caused bugs with touchables)
+- Implemented in TypeScript (so that a `.d.ts` file is provided)
+- Calculates Android support (of each emoji) differently, based on the Android OS version and the "added_in" property of an Emoji
+- Does not depend on the entire Lodash, depends on just 3 specific Lodash utils
+- Does not depend on `prop-types`
+
+## Installation
+
+```
+npm install --save react-native-emoji-picker-staltz
 ```
 
-### EmojiPicker component
-```javascript
-const EmojiPicker = require('react-native-emoji-picker');
+## Usage
+
+This component is designed to be the **only child** of a `<Modal>` component, in full screen.
+
+```jsx
+import EmojiPicker from 'react-native-emoji-picker-staltz';
 
 class Main extends React.Component {
   _emojiSelected(emoji) {
@@ -20,63 +42,51 @@ class Main extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <EmojiPicker 
-          style={styles.emojiPicker} 
-          onEmojiSelected={this._emojiSelected}/>
+        <Modal visible={true} transparent={true}>
+          <EmojiPicker
+            onEmojiSelected={this._emojiSelected}
+            rows={7}
+            localizedCategories={[ // Always in this order:
+              'Smileys and emotion',
+              'People and body',
+              'Animals and nature',
+              'Food and drink',
+              'Activities',
+              'Travel and places',
+              'Objects',
+              'Symbols',
+            ]}
+            />
+        </Modal>
       </View>
     );
   }
 }
-
 ```
 
-#### Component props
-- `onEmojiSelected` (Function) - Required. Called when the user taps on an emoji.
-- `style` (Object) - Optional. Standard view style for the enclosing component.
-- `clearButtonText` (String) - Optional. Alternate text for the clear button. Defaults to 'Clear'.
-- `hideClearButton` (Bool) - Optional. Hide the clear button. 
-- `rows` (Number) - Optional. Number of rows used to show all emojis. Defaults to 7.
+Props:
 
-### EmojiOverlay component
-Optional overlay which wraps the picker in a modal-like component 
-
-```javascript
-const { EmojiOverlay } = require('react-native-emoji-picker');
-
-class Main extends React.Component {
-  state = {
-    showPicker: false,
-  }
-
-  _emojiSelected(emoji) {
-    this.setState({showPicker: false})
-    console.log(emoji)
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-
-        <TouchableHighlight
-          onPress={() => this.setState({showPicker: true})}>
-          <Text> Show picker </Text>
-        </TouchableHighlight>
-
-        <EmojiOverlay 
-          style={styles.emojiPicker} 
-          visible={this.state.showPicker}
-          onTapOutside={() => this.setState({showPicker: false})}
-          horizontal={true}
-          onEmojiSelected={this._emojiSelected}/>
-
-      </View>
-    );
-  }
+```typescript
+type Props = {
+  onEmojiSelected: (e: string | null) => void;
+  onPressOutside?: () => void;
+  rows?: number;
+  localizedCategories?: Array<string>;
+  hideClearButton?: boolean;
+  emojiSize?: number;
+  modalStyle?: ViewStyle;
+  backgroundStyle?: ViewStyle;
+  containerStyle?: ViewStyle;
+  scrollStyle?: ViewStyle;
+  headerStyle?: TextStyle;
+  clearButtonStyle?: ViewStyle;
+  clearButtonText?: string;
 }
-
 ```
 
-#### Component props
-- (...all EmojiPicker props)
-- `visible` (Bool) - Required. Is the overlay visible
-- `onTapOutside` (Function) - Required. Callback for when user taps outside the EmojiPicker area. Should set `visible` to `false`
+## License
+
+Copyright (c) 2016 Yonah Forst
+Modifications: Copyright (c) 2020 Andre 'Staltz' Medeiros
+
+MIT
