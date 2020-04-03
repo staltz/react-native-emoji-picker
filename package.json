@@ -28,8 +28,8 @@
   "dependencies": {
     "emoji-datasource": "~5.0.1",
     "lodash.groupby": "~4.6.0",
-    "lodash.orderby": "~4.6.0",
     "lodash.mapvalues": "~4.6.0",
+    "lodash.orderby": "~4.6.0",
     "string.fromcodepoint": "~0.2.1"
   },
   "scripts": {
