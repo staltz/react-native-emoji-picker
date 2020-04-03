@@ -15,6 +15,7 @@ The changes made from react-native-emoji-picker to **react-native-emoji-picker-s
   - `scrollStyle`
   - `headerStyle`
   - `clearButtonStyle`
+- Updated `emoji-datasource` to the latest version
 - Implemented with FlatList, not a ScrollView with `setTimeout` hacks (this caused bugs with touchables)
 - Implemented in TypeScript (so that a `.d.ts` file is provided)
 - Calculates Android support (of each emoji) differently, based on the Android OS version and the "added_in" property of an Emoji
