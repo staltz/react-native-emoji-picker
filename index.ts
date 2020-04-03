@@ -206,11 +206,14 @@ export default class EmojiPicker extends PureComponent<{
   rows?: number;
   localizedCategories?: LocalizedCategories;
   hideClearButton?: boolean;
+  emojiSize?: number;
   modalStyle?: ViewStyle;
   backgroundStyle?: ViewStyle;
   containerStyle?: ViewStyle;
   scrollStyle?: ViewStyle;
   headerStyle?: TextStyle;
+  clearButtonStyle?: ViewStyle;
+  clearButtonText?: string;
 }> {
   private renderCategory = ({item}: any) => {
     const category = item;
