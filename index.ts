@@ -167,7 +167,7 @@ class EmojiCategory extends PureComponent<{
       textAlign: 'center' as const,
       lineHeight: size + PADDING * 2,
       paddingHorizontal: PADDING,
-    };
+    } as TextStyle;
     const rows = this.props.rows ?? 7;
     const maxHeight = (size + PADDING * 2) * rows + PADDING;
     const categoryText = this.props.localizedCategories
