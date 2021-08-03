@@ -154,7 +154,7 @@ class EmojiCategory extends PureComponent<{
   category: string;
   onEmojiSelected: (e: string) => void;
   emojiSize?: number;
-  emojiStyle?: ViewStyle;
+  emojiStyle?: TextStyle;
   rows?: number;
   headerStyle?: TextStyle;
   localizedCategories?: LocalizedCategories;
@@ -208,7 +208,7 @@ export default class EmojiPicker extends PureComponent<{
   localizedCategories?: LocalizedCategories;
   hideClearButton?: boolean;
   emojiSize?: number;
-  emojiStyle?: ViewStyle;
+  emojiStyle?: TextStyle;
   modalStyle?: ViewStyle;
   backgroundStyle?: ViewStyle;
   containerStyle?: ViewStyle;
