@@ -1,6 +1,6 @@
 {
   "name": "react-native-emoji-picker-staltz",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Simple emoji picker for react-native",
   "main": "index.js",
   "repository": {
